@@ -56,4 +56,8 @@ Frontend is maintained as a separate React project.
 python -m venv venv
 venv\Scripts\activate
 
+```
+## Overview 
+![img_alt](https://github.com/sanjanabh127/AI-Calculator/blob/4bc991598f1943a8cefe02a370346ce58074c240/Images/Screenshot%202025-12-27%20123831.png)
+![img_alt](https://github.com/sanjanabh127/AI-Calculator/blob/4bc991598f1943a8cefe02a370346ce58074c240/Images/Screenshot%202025-12-27%20123942.png)
 
