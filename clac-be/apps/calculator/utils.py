@@ -8,7 +8,7 @@ import os
 API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not API_KEY:
-    raise RuntimeError("❌ GEMINI_API_KEY not found. Check .env loading.")
+    raise RuntimeError(" GEMINI_API_KEY not found. Check .env loading.")
 
 client = genai.Client(api_key=API_KEY)
 
@@ -22,7 +22,7 @@ def analyze_image(image_base64: str, dict_of_vars=None):
     """
 
     response = client.models.generate_content(
-        model="models/gemini-1.5-flash",  # ✅ CORRECT MODEL ID
+        model="models/gemini-1.5-flash",  
         contents=[
             prompt,
             types.Part.from_image(image)
