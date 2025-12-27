@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import os
 
-from dotenv import load_dotenv  # ✅ ADD THIS
-load_dotenv()                  # ✅ AND THIS (TOP LEVEL)
+from dotenv import load_dotenv  
+load_dotenv()                   
 
 from apps.calculator.route import router as calculator_router
 from constants import SERVER_URL, PORT, ENV
