@@ -2,7 +2,6 @@ import { ColorSwatch, Group, Slider } from "@mantine/core";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 
-/* 🎨 Color palette */
 const SWATCHES = [
   "#ffffff",
   "#ee3333",
@@ -17,7 +16,7 @@ const SWATCHES = [
   "#fd7e14",
 ];
 
-const API_URL = import.meta.env.VITE_API_URL; // 👈 from .env.local
+const API_URL = import.meta.env.VITE_API_URL;  from .env.local
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -28,7 +27,6 @@ export default function Home() {
   const [isEraser, setIsEraser] = useState(false);
   const [result, setResult] = useState<string>("");
 
-  /* 🖤 Initialize black canvas */
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -43,7 +41,6 @@ export default function Home() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }, []);
 
-  /* ✏️ Drawing handlers */
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx) return;
@@ -70,7 +67,6 @@ export default function Home() {
 
   const stopDrawing = () => setDrawing(false);
 
-  /* ♻️ Reset canvas */
   const resetCanvas = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -83,7 +79,6 @@ export default function Home() {
     setResult("");
   };
 
-  /* 🧮 Calculate */
   const calculate = async () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -118,7 +113,6 @@ export default function Home() {
 
   return (
     <>
-      {/* 🎛 Controls */}
       <div className="fixed top-4 left-4 z-50 bg-black/70 p-4 rounded-lg space-y-3">
         <Group>
           {SWATCHES.map((swatch) => (
@@ -155,7 +149,6 @@ export default function Home() {
         </Group>
       </div>
 
-      {/* 🎨 Canvas */}
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0"
@@ -165,7 +158,6 @@ export default function Home() {
         onMouseLeave={stopDrawing}
       />
 
-      {/* 🧾 Result */}
       {result && (
         <div className="fixed top-6 right-6 text-white text-3xl font-bold">
           = {result}
